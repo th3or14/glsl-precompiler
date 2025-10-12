@@ -7,6 +7,8 @@ Automates adding `#define` directives to GLSL shader files for conditional compi
 Let's say you have a GLSL shader file `in.glsl`
 
 ```
+// some comments
+
 #version 460
 
 // other code
@@ -21,6 +23,8 @@ python3 precompiler.py -D A=1 -D B=2 -i in.glsl -o out.glsl
 produces `out.glsl`
 
 ```
+// some comments
+
 #version 460
 #define A 1
 #define B 2
