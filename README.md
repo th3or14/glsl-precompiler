@@ -38,4 +38,4 @@ with the desired defines inserted after the line with `#version` directive.
 
 # Requirements
 
-- Python 3 (minimal tested version is 3.8)
+- Python (minimal tested version is 3.8)
