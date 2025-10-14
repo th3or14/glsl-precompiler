@@ -36,4 +36,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest tests/tests.py
+        cd tests
+        python3 precompiler.py -D A=1 -D B=2 -i in.glsl -o out.glsl
+        pytest tests.py
