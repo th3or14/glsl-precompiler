@@ -1,3 +1,5 @@
+[![Python application](https://github.com/th3or14/glsl-precompiler/actions/workflows/python-app.yml/badge.svg)](https://github.com/th3or14/glsl-precompiler/actions/workflows/python-app.yml)
+
 # Description
 
 Automates adding `#define` directives to GLSL shader files for conditional compilation.
