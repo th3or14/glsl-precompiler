@@ -12,7 +12,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     defines = ''
     for d in args.D:
-        defines += ' '.join(['\n#define', *d.split('=', maxsplit=1)])
+        defines += ' '.join([*d.split('=', maxsplit=1)])
     read_data = None
     with open(args.i, encoding='utf-8') as input_file:
         read_data = input_file.read()
