@@ -19,7 +19,7 @@ Let's say you have a GLSL shader file `in.glsl`
 and you would like to add `#define A 1` and `#define B 2` to it before compiling. Then running
 
 ```
-python3 precompiler.py -D A=1 -D B=2 -i in.glsl -o out.glsl
+python precompiler.py -D A=1 -D B=2 -i in.glsl -o out.glsl
 ```
 
 produces `out.glsl`

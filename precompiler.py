@@ -4,7 +4,7 @@ import argparse
 import re
 
 if __name__ == '__main__':
-    usage = 'python3 precompiler.py -D A=1 -D B=2 -i in.glsl -o out.glsl'
+    usage = 'python precompiler.py -D A=1 -D B=2 -i in.glsl -o out.glsl'
     parser = argparse.ArgumentParser(usage=usage)
     parser.add_argument('-D', required=True, action='append')
     parser.add_argument('-i', required=True)
