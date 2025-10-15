@@ -11,7 +11,7 @@ Let's say you have a GLSL shader file `in.glsl`
 ```
 // some comments
 
-#version 460
+#version 460 core
 
 // other code
 ```
@@ -27,7 +27,7 @@ produces `out.glsl`
 ```
 // some comments
 
-#version 460
+#version 460 core
 #define A 1
 #define B 2
 

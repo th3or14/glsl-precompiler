@@ -1,5 +1,5 @@
 // some comments
 
-#version 460
+#version 460 core
 
 // other code
