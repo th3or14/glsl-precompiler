@@ -2,16 +2,41 @@ import filecmp
 import subprocess
 
 
-def test_usage():
+def run_precompiler(test_directory):
     args = ['python',
-            '../precompiler.py',
-            '-D',
-            'A=1',
-            '-D',
-            'B=2',
-            '-i',
-            'in.glsl',
-            '-o',
-            'out.glsl']
-    assert subprocess.run(args=args).returncode == 0
-    assert filecmp.cmp('out.glsl', 'expected-out.glsl')
+        '../precompiler.py',
+        '-D',
+        'A=1',
+        '-D',
+        'B=2',
+        '-i',
+        test_directory + '/in.glsl',
+        '-o',
+        test_directory + '/out.glsl']
+    return subprocess.run(args)
+
+
+def run_test(test_directory):
+    run_precompiler(test_directory).returncode == 0
+    assert filecmp.cmp(test_directory + '/out.glsl',
+        test_directory + '/expected-out.glsl')
+
+
+def test_version_with_core():
+    test_directory = 'version-with-core'
+    run_test(test_directory)
+
+
+def test_version_with_compatibility():
+    test_directory = 'version-with-compatibility'
+    run_test(test_directory)
+
+
+def test_version_without_profile_name():
+    test_directory = 'version-without-profile-name'
+    run_test(test_directory)
+
+
+def test_version_with_extra_whitespace():
+    test_directory = 'extra-version-with-extra-whitespace'
+    run_test(test_directory)
