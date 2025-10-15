@@ -38,5 +38,5 @@ def test_version_without_profile_name():
 
 
 def test_version_with_extra_whitespace():
-    test_directory = 'extra-version-with-extra-whitespace'
+    test_directory = 'version-with-extra-whitespace'
     run_test(test_directory)
