@@ -16,7 +16,7 @@ if __name__ == '__main__':
     read_data = None
     with open(args.i, encoding='utf-8') as input_file:
         read_data = input_file.read()
-    version = re.search(r'#version .*', read_data)[0]
+    version = re.search(r'#\s*version.*', read_data)[0]
     split_data = read_data.split(version, maxsplit=1)
     final_data = split_data[0] + version + defines + split_data[1]
     with open(args.o, 'w', encoding='utf-8') as output_file:
