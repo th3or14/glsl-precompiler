@@ -2,7 +2,7 @@ import filecmp
 import subprocess
 
 
-def run_precompiler(test_directory):
+def run_test(test_directory):
     args = ['python',
             '../precompiler.py',
             '-D',
@@ -13,11 +13,7 @@ def run_precompiler(test_directory):
             test_directory + '/in.glsl',
             '-o',
             test_directory + '/out.glsl']
-    return subprocess.run(args)
-
-
-def run_test(test_directory):
-    assert run_precompiler(test_directory).returncode == 0
+    assert subprocess.run(args).returncode == 0
     assert filecmp.cmp(test_directory + '/out.glsl',
                        test_directory + '/expected-out.glsl')
 
@@ -40,3 +36,24 @@ def test_version_with_extra_whitespace():
 def test_single_line_input_file():
     test_directory = 'single-line-input-file'
     run_test(test_directory)
+
+
+def test_input_file_is_output_file():
+    test_directory = 'input-file-is-output-file'
+    args = ['cp',
+            test_directory + '/in.glsl',
+            test_directory + '/out.glsl']
+    assert subprocess.run(args).returncode == 0
+    args = ['python',
+            '../precompiler.py',
+            '-D',
+            'A=1',
+            '-D',
+            'B=2',
+            '-i',
+            test_directory + '/out.glsl',
+            '-o',
+            test_directory + '/out.glsl']
+    assert subprocess.run(args).returncode == 0
+    assert filecmp.cmp(test_directory + '/out.glsl',
+                       test_directory + '/expected-out.glsl')
