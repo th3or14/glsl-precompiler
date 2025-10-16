@@ -17,7 +17,7 @@ def run_precompiler(test_directory):
 
 
 def run_test(test_directory):
-    run_precompiler(test_directory).returncode == 0
+    assert run_precompiler(test_directory).returncode == 0
     assert filecmp.cmp(test_directory + '/out.glsl',
                        test_directory + '/expected-out.glsl')
 
