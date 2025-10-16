@@ -33,8 +33,8 @@ def test_version_with_extra_whitespace():
     run_test(test_directory)
 
 
-def test_single_line_input_file():
-    test_directory = 'single-line-input-file'
+def test_nothing_before_version():
+    test_directory = 'nothing-before-version'
     run_test(test_directory)
 
 
