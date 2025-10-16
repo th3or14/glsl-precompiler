@@ -35,3 +35,8 @@ def test_version_without_profile():
 def test_version_with_extra_whitespace():
     test_directory = 'version-with-extra-whitespace'
     run_test(test_directory)
+
+
+def test_single_line_input_file():
+    test_directory = 'single-line-input-file'
+    run_test(test_directory)
