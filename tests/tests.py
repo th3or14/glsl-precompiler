@@ -22,18 +22,13 @@ def run_test(test_directory):
                        test_directory + '/expected-out.glsl')
 
 
-def test_version_with_core():
-    test_directory = 'version-with-core'
+def test_version_with_profile():
+    test_directory = 'version-with-profile'
     run_test(test_directory)
 
 
-def test_version_with_compatibility():
-    test_directory = 'version-with-compatibility'
-    run_test(test_directory)
-
-
-def test_version_without_profile_name():
-    test_directory = 'version-without-profile-name'
+def test_version_without_profile():
+    test_directory = 'version-without-profile'
     run_test(test_directory)
 
 
