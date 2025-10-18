@@ -60,6 +60,12 @@ or this
 #version 460 core
 ```
 
+or this
+
+```
+/* #version 450 core */ #version 460 core
+```
+
 And please do not use comments inside `#version` directive like this
 
 ```
