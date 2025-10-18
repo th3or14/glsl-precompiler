@@ -39,3 +39,23 @@ with the desired defines inserted after the line with `#version` directive.
 # Requirements
 
 - Python (minimal tested version is 3.8)
+
+# Restrictions
+
+While whitespace and comments before `#version` directive are allowed, the parser doesn't distinguish between commented and uncommented code. So please do not put `#version` directive in comments before uncommented `#version` directive like this
+
+```
+// #version 450 core
+
+#version 460 core
+```
+
+or this
+
+```
+/*
+#version 450 core
+*/
+
+#version 460 core
+```
