@@ -82,7 +82,7 @@ Please do not use comments inside `#version` directive like this
 #version /* 450 */ 460 core
 ```
 
-Plese do not use multiline comments starting on the line with `#version` directive like this
+Plese do not use multiline comments starting on the line with `#version` directive but ending on another line like this
 
 ```
 #version 460 core /* multiline
