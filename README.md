@@ -52,7 +52,7 @@ with the desired defines inserted after the line with `#version` directive.
 
 > The #version directive must appear before anything else in a shader, save for whitespace and comments.
 
-While whitespace and comments before `#version` directive are taken into account when parsing, this precompiler doesn't distinguish between comments and uncommented code. So please do not use `#version` directive in comments before uncommented `#version` directive like this
+While the possibile presence of whitespace and comments before `#version` directive is taken into account when parsing, this precompiler doesn't distinguish between comments and uncommented code. So please do not use `#version` directive in comments before uncommented `#version` directive like this
 
 ```
 // #version 450 core
