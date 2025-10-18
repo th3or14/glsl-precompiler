@@ -34,9 +34,7 @@ produces `out.glsl`
 // other code
 ```
 
-with the desired defines inserted after the line with `#version` directive.
-
-`core` (profile name) is optional, of course. `#version` directive could be just
+with the desired defines inserted after the line with `#version` directive. `core` (profile name) in `#version` directive is optional, of course. `#version` directive could be just
 
 ```
 #version 460
