@@ -57,3 +57,8 @@ def test_input_file_is_output_file():
     assert subprocess.run(args).returncode == 0
     assert filecmp.cmp(test_directory + '/out.glsl',
                        test_directory + '/expected-out.glsl')
+
+
+def test_version_with_extra_comments():
+    test_directory = 'version-with-extra-comments'
+    run_test(test_directory)
