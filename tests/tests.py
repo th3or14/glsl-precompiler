@@ -62,3 +62,8 @@ def test_input_file_is_output_file():
 def test_version_with_extra_comments():
     test_directory = 'version-with-extra-comments'
     run_test(test_directory)
+
+
+def test_multiline_comment_after_version():
+    test_directory = 'multiline-comment-after-version'
+    run_test(test_directory)

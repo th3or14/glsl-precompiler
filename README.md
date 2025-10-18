@@ -45,12 +45,3 @@ with the desired defines inserted after the line with `#version` directive.
 # Requirements
 
 - Python (minimal tested version is 3.8)
-
-# Restrictions
-
-Plese do not use multiline comments starting on the line with `#version` directive but ending on another line like this
-
-```
-#version 460 core /* multiline
-comment */
-```
