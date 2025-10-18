@@ -13,11 +13,17 @@ if __name__ == '__main__':
     defines = ''
     for d in args.D:
         defines += ' '.join(['\n#define', *d.split('=', maxsplit=1)])
-    read_data = None
+    input_data = None
     with open(args.i, encoding='utf-8') as input_file:
-        read_data = input_file.read()
-    version = re.search(r'#\s*version\s+[0-9]+.*', read_data)[0]
-    split_data = read_data.split(version, maxsplit=1)
-    final_data = split_data[0] + version + defines + split_data[1]
+        input_data = input_file.read()
+    output_data = None
+    pattern = r'(?s:/\*.*?\*/)|(?://.*)|(#\s*version\s+[0-9]+.*)'
+    for match in re.finditer(pattern, input_data):
+        version = match.group(1)
+        if version:
+            before_version = input_data[:match.start()]
+            after_version = input_data[match.end():]
+            output_data = before_version + version + defines + after_version
+            break
     with open(args.o, 'w', encoding='utf-8') as output_file:
-        output_file.write(final_data)
+        output_file.write(output_data)

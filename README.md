@@ -48,34 +48,6 @@ with the desired defines inserted after the line with `#version` directive.
 
 # Restrictions
 
-[OpenGL Wiki](https://wikis.khronos.org/opengl/Core_Language_(GLSL)#Version) states:
-
-> The #version directive must appear before anything else in a shader, save for whitespace and comments.
-
-While the possibile presence of whitespace and comments before `#version` directive is taken into account when parsing, this precompiler doesn't distinguish between comments and uncommented code. So please do not use `#version` directive in comments before uncommented `#version` directive like this
-
-```
-// #version 450 core
-
-#version 460 core
-```
-
-or this
-
-```
-/*
-#version 450 core
-*/
-
-#version 460 core
-```
-
-or this
-
-```
-/* #version 450 core */ #version 460 core
-```
-
 Plese do not use multiline comments starting on the line with `#version` directive but ending on another line like this
 
 ```
