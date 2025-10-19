@@ -34,7 +34,7 @@ produces `out.glsl`
 // other code
 ```
 
-with the desired defines inserted after `#version` directive.
+with the desired defines inserted after `#version` directive. Defines are inserted after `#version` directive because it must occur in a shader before anything else, except for comments and white space.
 
 # Requirements
 
