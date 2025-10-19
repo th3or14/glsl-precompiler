@@ -154,6 +154,21 @@ def test_only_commented_versions():
     run_negative_test(test_directory)
 
 
+def test_only_commented_versions_w_profile():
+    test_directory = 'only-commented-versions-w-profile'
+    run_negative_test(test_directory)
+
+
+def test_only_commented_versions_w_whitespace():
+    test_directory = 'only-commented-versions-w-whitespace'
+    run_negative_test(test_directory)
+
+
+def test_only_commented_versions_w_profile_w_whitespace():
+    test_directory = 'only-commented-versions-w-profile-w-whitespace'
+    run_negative_test(test_directory)
+
+
 def test_empty_input_file():
     test_directory = 'empty-input-file'
     run_negative_test(test_directory)
