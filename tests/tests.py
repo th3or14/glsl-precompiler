@@ -16,16 +16,19 @@ def run_precompiler(test_directory):
     return subprocess.run(args)
 
 
-def run_test(test_directory):
-    assert run_precompiler(test_directory).returncode == 0
+def check_output(test_directory):
     assert filecmp.cmp(test_directory + '/out.glsl',
                        test_directory + '/expected-out.glsl')
+
+
+def run_test(test_directory):
+    assert run_precompiler(test_directory).returncode == 0
+    check_output(test_directory)
 
 
 def run_negative_test(test_directory):
     assert run_precompiler(test_directory).returncode != 0
-    assert filecmp.cmp(test_directory + '/out.glsl',
-                       test_directory + '/expected-out.glsl')
+    check_output(test_directory)
 
 
 def test_version():
@@ -68,6 +71,46 @@ def test_nothing_before_version_w_profile_w_whitespace():
     run_test(test_directory)
 
 
+def test_nothing_after_version():
+    test_directory = 'nothing-after-version'
+    run_test(test_directory)
+
+
+def test_nothing_after_version_w_profile():
+    test_directory = 'nothing-after-version-w-profile'
+    run_test(test_directory)
+
+
+def test_nothing_after_version_w_whitespace():
+    test_directory = 'nothing-after-version-w-whitespace'
+    run_test(test_directory)
+
+
+def test_nothing_after_version_w_profile_w_whitespace():
+    test_directory = 'nothing-after-version-w-profile-w-whitespace'
+    run_test(test_directory)
+
+
+def test_multiple_versions():
+    test_directory = 'multiple-versions'
+    run_test(test_directory)
+
+
+def test_multiple_versions_w_profile():
+    test_directory = 'multiple-versions-w-profile'
+    run_test(test_directory)
+
+
+def test_multiple_versions_w_whitespace():
+    test_directory = 'multiple-versions-w-whitespace'
+    run_test(test_directory)
+
+
+def test_multiple_versions_w_profile_w_whitespace():
+    test_directory = 'multiple-versions-w-profile-w-whitespace'
+    run_test(test_directory)
+
+
 def test_input_file_is_output_file():
     test_directory = 'input-file-is-output-file'
     args = ['cp',
@@ -85,8 +128,7 @@ def test_input_file_is_output_file():
             '-o',
             test_directory + '/out.glsl']
     assert subprocess.run(args).returncode == 0
-    assert filecmp.cmp(test_directory + '/out.glsl',
-                       test_directory + '/expected-out.glsl')
+    check_output(test_directory)
 
 
 def test_commented_versions_and_version():
@@ -149,6 +191,16 @@ def test_multiline_comment_before_version_w_profile_w_whitespace():
     run_test(test_directory)
 
 
+def test_version_profile_is_nondefault_compatibility():
+    test_directory = 'version-profile-is-nondefault-compatibility'
+    run_test(test_directory)
+
+
+def test_version_profile_is_nondefault_es():
+    test_directory = 'version-profile-is-nondefault-es'
+    run_test(test_directory)
+
+
 def test_only_commented_versions():
     test_directory = 'only-commented-versions'
     run_negative_test(test_directory)
@@ -171,4 +223,44 @@ def test_only_commented_versions_w_profile_w_whitespace():
 
 def test_empty_input_file():
     test_directory = 'empty-input-file'
+    run_negative_test(test_directory)
+
+
+def test_version_wo_number():
+    test_directory = 'version-wo-number'
+    run_negative_test(test_directory)
+
+
+def test_version_wo_number_w_profile():
+    test_directory = 'version-wo-number-w-profile'
+    run_negative_test(test_directory)
+
+
+def test_version_wo_number_w_whitespace():
+    test_directory = 'version-wo-number-w-whitespace'
+    run_negative_test(test_directory)
+
+
+def test_version_wo_number_w_profile_w_whitespace():
+    test_directory = 'version-wo-number-w-profile-w-whitespace'
+    run_negative_test(test_directory)
+
+
+def test_version_wo_sharp():
+    test_directory = 'version-wo-sharp'
+    run_negative_test(test_directory)
+
+
+def test_version_wo_sharp_w_profile():
+    test_directory = 'version-wo-sharp-w-profile'
+    run_negative_test(test_directory)
+
+
+def test_version_wo_sharp_w_whitespace():
+    test_directory = 'version-wo-sharp-w-whitespace'
+    run_negative_test(test_directory)
+
+
+def test_version_wo_sharp_w_profile_w_whitespace():
+    test_directory = 'version-wo-sharp-w-profile-w-whitespace'
     run_negative_test(test_directory)
