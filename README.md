@@ -34,7 +34,7 @@ produces `out.glsl`
 // other code
 ```
 
-with the desired defines inserted after the line with `#version` directive.
+with the desired defines inserted after `#version` directive.
 
 # Requirements
 
