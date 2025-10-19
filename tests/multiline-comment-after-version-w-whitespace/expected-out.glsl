@@ -1,8 +1,8 @@
 // some comments
 
-#version 460
+    	#	    version    	460
 #define A 1
-#define B 2 /* multiline
+#define B 2	    /* multiline
 comment */
 
 // other code

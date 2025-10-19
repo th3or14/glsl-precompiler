@@ -18,18 +18,23 @@ def run_test(test_directory):
                        test_directory + '/expected-out.glsl')
 
 
-def test_version_with_profile():
-    test_directory = 'version-with-profile'
+def test_version():
+    test_directory = 'version'
     run_test(test_directory)
 
 
-def test_version_without_profile():
-    test_directory = 'version-without-profile'
+def test_version_w_profile():
+    test_directory = 'version-w-profile'
     run_test(test_directory)
 
 
-def test_version_with_extra_whitespace():
-    test_directory = 'version-with-extra-whitespace'
+def test_version_w_whitespace():
+    test_directory = 'version-w-whitespace'
+    run_test(test_directory)
+
+
+def test_version_w_profile_w_whitespace():
+    test_directory = 'version-w-profile-w-whitespace'
     run_test(test_directory)
 
 
@@ -59,11 +64,41 @@ def test_input_file_is_output_file():
                        test_directory + '/expected-out.glsl')
 
 
-def test_version_with_extra_comments():
-    test_directory = 'version-with-extra-comments'
+def test_commented_versions():
+    test_directory = 'commented-versions'
+    run_test(test_directory)
+
+
+def test_commented_versions_and_version():
+    test_directory = 'commented-versions-and-version-w-profile'
+    run_test(test_directory)
+
+
+def test_commented_versions_and_version_w_whitespace():
+    test_directory = 'commented-versions-and-version-w-whitespace'
+    run_test(test_directory)
+
+
+def test_commented_versions_and_version_w_profile_w_whitespace():
+    test_directory = 'commented-versions-and-version-w-profile-w-whitespace'
     run_test(test_directory)
 
 
 def test_multiline_comment_after_version():
     test_directory = 'multiline-comment-after-version'
+    run_test(test_directory)
+
+
+def test_multiline_comment_after_version_w_profile():
+    test_directory = 'multiline-comment-after-version-w-profile'
+    run_test(test_directory)
+
+
+def test_multiline_comment_after_version_w_whitespace():
+    test_directory = 'multiline-comment-after-version-w-whitespace'
+    run_test(test_directory)
+
+
+def test_multiline_comment_after_version_w_profile_w_whitespace():
+    test_directory = 'multiline-comment-after-version-w-profile-w-whitespace'
     run_test(test_directory)
