@@ -11,7 +11,7 @@ Let's say you have a GLSL shader file `in.glsl`
 ```
 // some comments
 
-#version 460 core
+#version 460
 
 // other code
 ```
@@ -27,7 +27,7 @@ produces `out.glsl`
 ```
 // some comments
 
-#version 460 core
+#version 460
 #define A 1
 #define B 2
 
@@ -35,12 +35,6 @@ produces `out.glsl`
 ```
 
 with the desired defines inserted after the line with `#version` directive.
-
-`core` (profile name) in `#version` directive is optional, of course. `#version` directive could be just
-
-```
-#version 460
-```
 
 # Requirements
 
