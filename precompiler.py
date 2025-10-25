@@ -17,7 +17,7 @@ if __name__ == '__main__':
     with open(args.i, encoding='utf-8') as input_file:
         input_data = input_file.read()
     output_data = None
-    pattern = r'(?s:/\*.*?\*/)|(?://.*)|(#\s*version(\s+\w+)+)'
+    pattern = r'(?s:/\*.*?\*/)|(?://.*)|(#[^\S\r\n]*version([^\S\r\n]+\w+)+)'
     for match in re.finditer(pattern, input_data):
         version = match.group(1)
         if version:
