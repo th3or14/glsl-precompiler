@@ -224,3 +224,8 @@ def test_only_commented_versions_w_profile_w_whitespace():
 def test_empty_input_file():
     test_directory = 'empty-input-file'
     run_negative_test(test_directory)
+
+
+def test_shader_sample():
+    test_directory = 'shader-sample'
+    run_test(test_directory)
