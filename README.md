@@ -39,3 +39,11 @@ with the desired defines inserted after `#version` directive. Defines are insert
 # Requirements
 
 - Python (minimal tested version is 3.8)
+
+# Running Tests
+
+```
+pip install pytest
+cd tests
+pytest tests.py
+```
