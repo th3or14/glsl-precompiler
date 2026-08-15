@@ -43,7 +43,6 @@ with the desired defines inserted after `#version` directive. Defines are insert
 # Running Tests
 
 ```
-pip install pytest
 cd tests
-pytest tests.py
+python -m unittest tests.py
 ```
