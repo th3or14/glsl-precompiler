@@ -21,7 +21,7 @@ def check_output(test_directory):
                        test_directory + '/expected-out.glsl')
 
 
-def run_test(test_directory):
+def run_positive_test(test_directory):
     assert run_precompiler(test_directory).returncode == 0
     check_output(test_directory)
 
@@ -31,84 +31,89 @@ def run_negative_test(test_directory):
     check_output(test_directory)
 
 
-def test_version():
-    test_directory = 'version'
-    run_test(test_directory)
+def test_example_from_readme():
+    test_directory = 'example-from-readme'
+    run_positive_test(test_directory)
 
 
-def test_version_w_profile():
-    test_directory = 'version-w-profile'
-    run_test(test_directory)
+def test_nothing_before_and_after_version():
+    test_directory = 'nothing-before-and-after-version'
+    run_positive_test(test_directory)
 
 
-def test_version_w_whitespace():
-    test_directory = 'version-w-whitespace'
-    run_test(test_directory)
+def test_nothing_before_and_after_version_w_profile():
+    test_directory = 'nothing-before-and-after-version-w-profile'
+    run_positive_test(test_directory)
 
 
-def test_version_w_profile_w_whitespace():
-    test_directory = 'version-w-profile-w-whitespace'
-    run_test(test_directory)
+def test_nothing_before_and_after_version_w_whitespace():
+    test_directory = 'nothing-before-and-after-version-w-whitespace'
+    run_positive_test(test_directory)
+
+
+def test_nothing_before_and_after_version_w_profile_w_whitespace():
+    test_directory = 'nothing-before-and-after-version-w-profile-w-whitespace'
+    run_positive_test(test_directory)
 
 
 def test_nothing_before_version():
     test_directory = 'nothing-before-version'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_nothing_before_version_w_profile():
     test_directory = 'nothing-before-version-w-profile'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_nothing_before_version_w_whitespace():
     test_directory = 'nothing-before-version-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_nothing_before_version_w_profile_w_whitespace():
     test_directory = 'nothing-before-version-w-profile-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_nothing_after_version():
     test_directory = 'nothing-after-version'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_nothing_after_version_w_profile():
     test_directory = 'nothing-after-version-w-profile'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_nothing_after_version_w_whitespace():
     test_directory = 'nothing-after-version-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_nothing_after_version_w_profile_w_whitespace():
     test_directory = 'nothing-after-version-w-profile-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiple_versions():
     test_directory = 'multiple-versions'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiple_versions_w_profile():
     test_directory = 'multiple-versions-w-profile'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiple_versions_w_whitespace():
     test_directory = 'multiple-versions-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiple_versions_w_profile_w_whitespace():
     test_directory = 'multiple-versions-w-profile-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_input_file_is_output_file():
@@ -133,72 +138,72 @@ def test_input_file_is_output_file():
 
 def test_commented_versions_and_version():
     test_directory = 'commented-versions-and-version'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_commented_versions_and_version_w_profile():
     test_directory = 'commented-versions-and-version-w-profile'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_commented_versions_and_version_w_whitespace():
     test_directory = 'commented-versions-and-version-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_commented_versions_and_version_w_profile_w_whitespace():
     test_directory = 'commented-versions-and-version-w-profile-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiline_comment_after_version():
     test_directory = 'multiline-comment-after-version'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiline_comment_after_version_w_profile():
     test_directory = 'multiline-comment-after-version-w-profile'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiline_comment_after_version_w_whitespace():
     test_directory = 'multiline-comment-after-version-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiline_comment_after_version_w_profile_w_whitespace():
     test_directory = 'multiline-comment-after-version-w-profile-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiline_comment_before_version():
     test_directory = 'multiline-comment-before-version'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiline_comment_before_version_w_profile():
     test_directory = 'multiline-comment-before-version-w-profile'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiline_comment_before_version_w_whitespace():
     test_directory = 'multiline-comment-before-version-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_multiline_comment_before_version_w_profile_w_whitespace():
     test_directory = 'multiline-comment-before-version-w-profile-w-whitespace'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_version_profile_is_nondefault_compatibility():
     test_directory = 'version-profile-is-nondefault-compatibility'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_version_profile_is_nondefault_es():
     test_directory = 'version-profile-is-nondefault-es'
-    run_test(test_directory)
+    run_positive_test(test_directory)
 
 
 def test_only_commented_versions():
@@ -226,6 +231,26 @@ def test_empty_input_file():
     run_negative_test(test_directory)
 
 
-def test_shader_sample():
-    test_directory = 'shader-sample'
-    run_test(test_directory)
+def test_main_after_version():
+    test_directory = 'main-after-version'
+    run_positive_test(test_directory)
+
+
+def test_main_after_version_w_profile():
+    test_directory = 'main-after-version-w-profile'
+    run_positive_test(test_directory)
+
+
+def test_main_after_version_w_whitespace():
+    test_directory = 'main-after-version-w-whitespace'
+    run_positive_test(test_directory)
+
+
+def test_main_after_version_w_profile_w_whitespace():
+    test_directory = 'main-after-version-w-profile-w-whitespace'
+    run_positive_test(test_directory)
+
+
+def test_nothing_before_and_after_main():
+    test_directory = 'nothing-before-and-after-main'
+    run_negative_test(test_directory)
