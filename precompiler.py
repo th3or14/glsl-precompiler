@@ -20,7 +20,7 @@ if __name__ == '__main__':
     pattern = r'(?s:/\*.*?\*/)|(?://.*)|(#[^\S\r\n]*version([^\S\r\n]+\w+)+)'
     for match in re.finditer(pattern, input_data):
         version = match.group(1)
-        if version:
+        if version is not None:
             before_version = input_data[:match.start()]
             after_version = input_data[match.end():]
             output_data = before_version + version + defines + after_version
