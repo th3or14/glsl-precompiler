@@ -25,5 +25,7 @@ if __name__ == '__main__':
             after_version = input_data[match.end():]
             output_data = before_version + version + defines + after_version
             break
+    if output_data is None:
+        raise RuntimeError('Parsing failed: no version was found')
     with open(args.o, 'w', encoding='utf-8') as output_file:
         output_file.write(output_data)

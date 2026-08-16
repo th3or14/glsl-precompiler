@@ -28,7 +28,6 @@ class TestPrecompiler(unittest.TestCase):
 
     def run_negative_test(self, test_directory):
         self.assertNotEqual(self.run_precompiler(test_directory).returncode, 0)
-        self.check_output(test_directory)
 
     def test_example_from_readme(self):
         test_directory = 'example-from-readme'
